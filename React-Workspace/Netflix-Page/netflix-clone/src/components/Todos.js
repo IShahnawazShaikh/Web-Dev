@@ -1,23 +1,42 @@
-import React, {useState,useEffect}from 'react'
+import React, {useState,useEffect} from 'react'
+import axios from 'axios';
 
+const API_URL="https://jsonplaceholder.typicode.com/todos/";
 export default function Todos() {
-    const [count, setCount] = useState(0);
-    
-    /* Use Effect render once if we pass empty array, its rebdering depends on array values*/
+    const [isLoading, setIsLoading] = useState(true);
+    const [todosList,setTodosList]=useState([]);
+    const fetchData=async()=>{
+      let res=await axios.get(API_URL); /* await is used when we wait until response not come else we will get empty response */
+      //console.log(res.data); 
+      setTodosList(res.data);
+      setIsLoading(false);
+    }
+    /* Use Effect render once if we pass empty array, its rendering depends on array values*/
     useEffect(()=>{
-       console.log("use effect render");
+       fetchData();
     },[]);
-    console.log("redering count: ",count);  /* It showing=> whenver click to increment whole componet is rebdering again n again */ 
-
-    return (
-    <div>
-       <h2>All Todos</h2>  
-       <button onClick={()=>{
-          setCount(count+1);
-       }}>
-
-        click to increment count={count}   
-      </button>     
-    </div>
-    )
+    
+    console.log("todosList",todosList);
+    if(isLoading){
+      return <p>Todo list is loading...</p>
+    }
+    else{
+        return (
+            <div>
+               <h2>All Todos</h2>  
+                {
+                 todosList.map((todo)=>{
+                   return (
+                    <>
+                      <span>{todo.id} </span>
+                      <span>{todo.title}</span>
+                      <br></br>
+                    </>
+                   );
+                 })
+                }
+            </div>
+        )
+    }
+  
 }
