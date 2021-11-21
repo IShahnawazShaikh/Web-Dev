@@ -1,5 +1,5 @@
 import './App.css';
-import {NavBar,Body,Background,Todos} from './components/';
+import {NavBar,Body,Background,Todos,TodoClassComponent} from './components/';
 function App() {
   return (
     <div>
@@ -9,7 +9,10 @@ function App() {
       <Body/>
       <p>Footer</p> */}
 
-      <Todos/>
+      {/* <Todos/> */}
+      <TodoClassComponent/>
+   
+
     </div>
   );
 }

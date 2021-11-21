@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios';
+import Todo  from './Todo';
 
 const API_URL="https://jsonplaceholder.typicode.com/todos/";
 export default function Todos() {
@@ -15,8 +16,6 @@ export default function Todos() {
     useEffect(()=>{
        fetchData();
     },[]);
-    
-    console.log("todosList",todosList);
     if(isLoading){
       return <p>Todo list is loading...</p>
     }
@@ -25,14 +24,8 @@ export default function Todos() {
             <div>
                <h2>All Todos</h2>  
                 {
-                 todosList.map((todo)=>{
-                   return (
-                    <>
-                      <span>{todo.id} </span>
-                      <span>{todo.title}</span>
-                      <br></br>
-                    </>
-                   );
+                   todosList.map((todo,index)=>{
+                   return <Todo key={index} todo={todo}/>
                  })
                 }
             </div>
