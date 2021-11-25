@@ -1,0 +1,9 @@
+.movie-list {
+  padding: 2rem;
+  display: flex;
+
+  /* read about it */
+  flex-wrap: wrap;
+
+  background-color: #243240;
+}
