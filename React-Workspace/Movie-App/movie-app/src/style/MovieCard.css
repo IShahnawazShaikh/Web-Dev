@@ -2,3 +2,7 @@
   margin-right: 2rem;
   margin-bottom: 2rem;
 }
+
+.movie-card img {
+  height: 450px;
+}

@@ -1,0 +1,8 @@
+.use-effect {
+}
+.use-effect input {
+  border: 1px solid #eee;
+  text-align: center;
+  background: none;
+  color: #eee;
+}

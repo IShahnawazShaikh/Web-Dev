@@ -1,0 +1,42 @@
+.movie-page {
+  height: calc(100vh - 10vh);
+  position: relative;
+  /* margin-bottom: 100px; */
+}
+.movie-details {
+  position: absolute;
+  top: 0px;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.movie-poster {
+  height: 100%;
+  width: 100%;
+}
+.movie-poster img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+.movie-info {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+.movie-info h3 {
+  margin-top: 1rem;
+}
+.movie-info h5 {
+  margin-top: 1rem;
+}
+
+.movie-info h6 {
+  margin-top: 1rem;
+}
+.movie-info p {
+  margin-top: 1rem;
+}

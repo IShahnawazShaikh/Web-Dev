@@ -8,7 +8,7 @@ export default function MovieList({ movies, isLoading }) {
     return (
       <div className="movie-list">
         {movies.map((movie) => {
-          console.log("movie: ", movie);
+          // console.log("movie: ", movie);
           return <MovieCard movie={movie} key={movie.imdbID} />;
         })}
       </div>
